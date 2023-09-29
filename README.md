@@ -156,6 +156,10 @@ const filters = [
 
 // just remove whatever filters you don't want from the array
 
+const videoEditingRef = React.useRef(null); // create ref to save the edited video
+
+await videoEditingRef.current.completeEditing() // call this to save the edited video
+
 <VideoEditor uri={video} filters={filters} /> // add video from the gallery or phone camera
 ```
 

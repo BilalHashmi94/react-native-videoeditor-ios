@@ -39,12 +39,11 @@ import {
   NativeModules,
   ActivityIndicator,
 } from 'react-native';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { forwardRef, useEffect, useImperativeHandle, useRef, useState } from 'react';
 import Video from 'react-native-video';
 import { showEditor } from 'react-native-video-trim';
 
-const index = ({ uri, filters }) => {
-  const videoRef = useRef(null);
+const index = forwardRef(({ uri, filters }, ref) => {
   const trimVideoRef = useRef(null);
   const [selectedFilter, setSelectedFilter] = useState('');
   const [paused, setPaused] = useState(false);
@@ -94,6 +93,13 @@ const index = ({ uri, filters }) => {
       subscription.remove();
     };
   }, []);
+
+  useImperativeHandle(ref, () => ({
+    async completeEditing() {
+      const res = await trimVideoRef.current.save();
+      return res;
+    },
+  }));
 
   console.warn('video', video);
 
@@ -241,7 +247,7 @@ const index = ({ uri, filters }) => {
       </View>
     </View>
   );
-};
+});
 
 var styles = StyleSheet.create({
   backgroundVideo: {

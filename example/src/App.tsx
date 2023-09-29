@@ -1,12 +1,13 @@
 import * as React from 'react';
 
-import { StyleSheet, View, Text, Button } from 'react-native';
+import { StyleSheet, View, Text, Button, TouchableOpacity } from 'react-native';
 import VideoEditor from 'react-native-videoeditor-ios';
 import { launchCamera, launchImageLibrary } from 'react-native-image-picker';
 
 export default function App() {
   const [result, setResult] = React.useState<number | undefined>();
   const [video, setVideo] = React.useState('');
+  const videoEditingRef = React.useRef(null);
 
   const filters = [
     {
@@ -130,18 +131,38 @@ export default function App() {
       }}
     >
       {video ? (
-        <VideoEditor uri={video} filters={filters} />
+        <>
+          <VideoEditor ref={videoEditingRef} uri={video} filters={filters} />
+          <TouchableOpacity
+            onPress={async () => {
+              const res = await videoEditingRef.current.completeEditing();
+              console.warn('res', res);
+            }}
+            style={{
+              width: '100%',
+              height: 60,
+              borderRadius: 10,
+              backgroundColor: 'white',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <Text style={{ color: 'black', fontWeight: 'bold', fontSize: 18 }}>
+              Complete Editing
+            </Text>
+          </TouchableOpacity>
+        </>
       ) : (
-        <View style={{marginTop: 90}}>
-        <Button
-          title="Edit Video"
-          onPress={async () => {
-            const result = await launchImageLibrary({mediaType: 'video'});
-            console.warn('res', result.assets[0]?.uri);
-            
-            setVideo(result.assets[0]?.uri);
-          }}
-        />
+        <View style={{ marginTop: 90 }}>
+          <Button
+            title="Edit Video"
+            onPress={async () => {
+              const result = await launchImageLibrary({ mediaType: 'video' });
+              console.warn('res', result.assets[0]?.uri);
+
+              setVideo(result.assets[0]?.uri);
+            }}
+          />
         </View>
       )}
     </View>

@@ -1,6 +1,6 @@
 {
   "name": "react-native-videoeditor-ios",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Empower iOS developers to take their video editing capabilities to the next level with our comprehensive React Native npm library. Our package offers a versatile suite of features to crop, trim, add filters, overlay images, text, shapes, and GIFs seamlessly onto videos within your React Native iOS applications. Whether you're building a social media app, a video-sharing platform, or enhancing user-generated content, our library simplifies the integration of advanced video editing functionality, saving you valuable development time and effort.Key Features:Video Cropping and Trimming: Crop and trim videos to achieve the desired length and aspect ratio.Filters and Effects: Apply a wide range of filters and effects to enhance video aesthetics and creativity.Image Overlays: Superimpose images onto videos to add logos, watermarks, or visual elements.Text Overlays: Embed dynamic text overlays with customizable fonts, colors, and animations to convey messages or captions.Shapes and Graphics: Enhance vid",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
