@@ -32,6 +32,16 @@ In Future Release:
 npm install react-native-videoeditor-ios
 ```
 
+or
+
+```sh
+yarn add install react-native-videoeditor-ios
+```
+
+```sh
+pod install
+```
+
 ## Usage
 
 ```js
@@ -160,7 +170,7 @@ const videoEditingRef = React.useRef(null); // create ref to save the edited vid
 
 await videoEditingRef.current.completeEditing() // call this to save the edited video
 
-<VideoEditor uri={video} filters={filters} /> // add video from the gallery or phone camera
+<VideoEditor ref={videoEditingRef} uri={video} filters={filters} /> // add video from the gallery or phone camera
 ```
 
 ## Contributing
