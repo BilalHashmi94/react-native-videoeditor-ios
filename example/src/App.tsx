@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { StyleSheet, View, Text, Button } from 'react-native';
-import Multiply from 'react-native-videoeditor-ios';
+import VideoEditor from 'react-native-videoeditor-ios';
 import { launchCamera, launchImageLibrary } from 'react-native-image-picker';
 
 export default function App() {
@@ -130,7 +130,7 @@ export default function App() {
       }}
     >
       {video ? (
-        <Multiply uri={video} filters={filters} />
+        <VideoEditor uri={video} filters={filters} />
       ) : (
         <View style={{marginTop: 90}}>
         <Button
