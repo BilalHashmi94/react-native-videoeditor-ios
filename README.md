@@ -172,10 +172,14 @@ await videoEditingRef.current.completeEditing() // call this to save the edited 
 
 <VideoEditor ref={videoEditingRef} uri={video} filters={filters} /> // add video from the gallery or phone camera
 ```
-## Free Palestine
-## Save Palesting
-## Support Palestine
-## Love Palestine
+# Free Palestine
+
+# Save Palesting
+
+# Support Palestine
+
+# Love Palestine
+
 ## Contributing
 
 See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
