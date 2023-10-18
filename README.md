@@ -172,13 +172,6 @@ await videoEditingRef.current.completeEditing() // call this to save the edited 
 
 <VideoEditor ref={videoEditingRef} uri={video} filters={filters} /> // add video from the gallery or phone camera
 ```
-# Free Palestine
-
-# Save Palesting
-
-# Support Palestine
-
-# Love Palestine
 
 ## Contributing
 
@@ -191,3 +184,5 @@ MIT
 ---
 
 Made with [create-react-native-library](https://github.com/callstack/react-native-builder-bob)
+
+# Free Palestine 🇵🇸🇵🇸🇵🇸 
